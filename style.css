@@ -1,0 +1,312 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	margin: auto;
+}
+
+
+/* En-tête */
+
+header{
+	display: flex;
+	justify-content: space-between;
+	background-color: black;
+}
+
+h1{
+	font-family: 'Permanent Marker', cursive;
+	font-size: 20px;
+}
+
+a {
+	transition: all 0.1s ease-in;
+}
+
+header h1 a{
+	margin-left: 10px;
+	text-decoration: none;
+	color: white;
+	position: relative;
+    top: -10px;
+}
+
+header a:hover, nav a:hover{
+	color: #006eff
+}
+
+nav{
+	background-color: black;
+	font-size: 15px;
+}
+
+nav ul{
+	padding: 0;
+	margin-left: 10px;
+	margin-bottom: 5px;
+}
+
+nav ul li{
+	list-style-type: none;
+	margin-bottom: 5px;
+}
+
+nav ul li a{
+	text-transform: uppercase;
+	color: white;
+	text-decoration: none;
+}
+
+#conteneur{
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+div#liens-secondaires{
+	width: fit-content;
+}
+div#liens-secondaires span{
+	margin-top: 10px;
+	color: white;
+}
+
+
+
+/* Aside */
+
+.tri-collection label {
+	text-transform: uppercase;
+	color: #666;
+	margin-bottom: 5px;
+	font-size: 12px;
+}
+.tri-collection {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.tri-collection select{
+	width: 105px;
+}
+
+/* Articles */
+
+
+.article-image img {
+	max-width: 150px; /* Afin d'éviter les débordement des images */
+}
+
+.article-image img#modif {
+	height: 150px; /* Afin d'éviter les débordement des images */
+}
+
+section#articles{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.article a{
+	color: black;
+	text-decoration: none;
+}
+
+.article-infos h5, .article-infos h6{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 15px;
+	text-align: center;
+}
+
+/* Pied de page */
+
+footer{
+	background-color: black;
+	color: white;
+}
+
+div#footer-inner, p.credit{
+	margin-left: 10px;
+}
+
+div#footer-inner h3{
+	margin-top: 15px;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#footer-inner ul{
+	padding: 0px;
+	line-height: 25px;
+}
+
+#footer-inner li{
+	list-style-type: none;
+}
+
+#footer-inner a{
+	color: #aaa;
+	text-decoration: none;
+}
+
+#footer-inner a:hover{
+	color: white;
+}
+
+div#footer-inner #contact{
+	margin-bottom: 15px;
+}
+
+#footer-inner p{
+	color: #aaa;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+div#footer-inner section{
+	margin-bottom: 25px;
+}
+
+p.credit{
+	color: #aaa;
+	font-size: 12px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/*------------------------------------*\
+    $Version Tablette
+\*------------------------------------*/
+@media screen and (min-width:480px){
+	#conteneur{
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+	}
+
+	header{
+		grid-column: span 2;
+	}
+
+	div#liens-secondaires{
+		margin-right: 10px;
+	}
+
+	span.material-icons{
+		margin-left: 5px;
+	}
+
+	nav{
+		grid-column: span 2;
+	}
+
+	nav ul{
+        display: flex;
+        justify-content: space-around;
+		margin-left: 0px;
+		margin-bottom: 20px;
+    }
+
+	.tri-collection select{
+		width: 90%;
+	}
+
+	section#articles{
+		margin-top: 20px;
+		margin-bottom: 0px;
+	}
+
+	div.article{
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		width: 35%;
+		margin-bottom: 25px;
+	}
+
+	footer{
+			grid-column: span 2;
+		}
+
+	#footer-inner{
+		display: flex;
+		justify-content: space-between;
+		margin: 10px;
+	}
+
+	div#footer-inner section{
+		margin-bottom: 0px;
+	}
+
+}
+
+/*------------------------------------*\
+    $Version Desktop
+\*------------------------------------*/
+
+@media screen and (min-width:960px){
+	#conteneur{
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+	}
+
+	header{
+		grid-column: span 3;
+	}
+
+	nav{
+		grid-column: 1;
+		grid-row: span 2;
+	}
+
+	nav ul{
+        display: inline-block;
+	}
+
+	nav ul li a{
+        margin-left: 10px;
+	}
+
+	aside{
+		grid-column-start: 3;
+	}
+
+	#articles{
+		grid-column: 2;
+		grid-row-start: 2;
+	}
+
+	div.article, div#tri{
+		display: flex;
+	}
+
+	div.article{
+		flex-direction: row;
+		width: 30%;
+		flex-wrap: wrap;
+	}
+
+	#tri{
+		flex-direction: column;
+	}
+
+	div#footer-inner{
+		margin-right: 100px;
+	}
+
+	footer{
+		grid-column: span 3;
+		height: 376px;
+	}
+}
+
+
+
+
+
